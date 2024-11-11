@@ -17,12 +17,12 @@ import { Icandidate } from "../../types/candidate";
     "candidates/getList",
     async (_, thunkApi) => {
       try {
-        const res = await fetch("http://localhost:2222/api/candidates/");
+        const res = await fetch("http://localhost:11223/api/candidates");
         if (res.status != 200) {
           thunkApi.rejectWithValue("Can't get the list, please try again");
         }
         const data = await res.json();
-        thunkApi.fulfillWithValue(data);
+        return data
       } catch (err) {
         thunkApi.rejectWithValue("Can't get the list, please try again");
       }
