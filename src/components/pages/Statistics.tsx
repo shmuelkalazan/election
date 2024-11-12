@@ -16,13 +16,13 @@ function Statistics() {
 
   useEffect(( )=>{
     dispach(fetchCandidates())
-    console.log(candidatets.candidate[0]?.votes)
+    // console.log(candidatets.candidate[0]?.votes)
 },[])
   
   return (
     <div>
     {candidatets.candidate.map((e) =>
-    <div className="vote-list">
+    <div key={e._id} className="vote-list">
     <div className="vote-card" > 
       <p>name: {e?.name} </p>
       <p className="badge">{(e?.votes).toString()}</p>

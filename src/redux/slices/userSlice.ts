@@ -23,7 +23,7 @@ export const fetchLogin = createAsyncThunk('user/login',
             }
             const data = await res.json()
             localStorage.setItem("Authorization" ,data.token)
-            console.log(data);
+            // console.log(data);
             return data
         } catch (err) {
             thunkApi.rejectWithValue(err)
@@ -60,8 +60,9 @@ const userSlice = createSlice({
         logout:(state) => {
             state.user = null
         },
-        vote:(state) => {
-            state.user!.hasVoted = true
+        vote:(state,action) => {
+            state.user!.hasVoted = true 
+            state.user!.votedFor = action.payload
         }
     },
     extraReducers: (builder: ActionReducerMapBuilder<userState>) => {

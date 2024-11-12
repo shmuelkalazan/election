@@ -3,8 +3,8 @@ import Nav from './components/Nav'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
-import Votes from './components/gapes/Votes'
-import Statistics from './components/gapes/Statistics'
+import Votes from './components/pages/Votes'
+import Statistics from './components/pages/Statistics'
 import cors from "cors"
 
 

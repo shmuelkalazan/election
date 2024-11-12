@@ -19,7 +19,8 @@ function Nav() {
     return (
     <div className="nav">
       {user.user ? (
-        <>{console.log(user.user)}
+        <>
+        {/* {console.log(user.user)} */}
           <NavLink to={"/votes"}>Votes</NavLink>
           {user.user.isAdmin && (
             <NavLink to={"/statistics"}>Statistics</NavLink>
@@ -28,7 +29,7 @@ function Nav() {
         </>
       ) : (
         <>
-        {console.log(user.user)}
+        {/* {console.log(user.user)} */}
           <NavLink to={"/login"}>Login</NavLink>
           <NavLink to={"/register"}>Register</NavLink>
         </>

@@ -37,7 +37,11 @@ import { Icandidate } from "../../types/candidate";
   const candidateSlice = createSlice({
     name: "candidates",
     initialState,
-    reducers: {},
+    reducers: {
+      vote:(state ,action) => {
+        state.candidate.map((e) =>{e._id == action.payload && e.votes ++})
+    }  
+    },
     extraReducers: (builder: ActionReducerMapBuilder<candidateState>) => {
       builder.addCase(fetchCandidates.pending, (state, action)=>{
           state.status = DataStatus.LOADING
