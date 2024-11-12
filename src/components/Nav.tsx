@@ -1,12 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import { RootState, useAppSelector } from '../redux/store'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navigate, NavLink, useNavigate } from 'react-router-dom'
+import { RootState, useAppDispatch, useAppSelector } from '../redux/store'
+import userSlice from '../redux/slices/userSlice'
 
 function Nav() {
     // const user = useSelector((state :RootState) => state.user)
+    
     const user = useAppSelector(state => state.user)
-
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const logOut  = () => {
+      localStorage.removeItem('token')
+      dispatch(userSlice.actions.logout())
+      navigate("/")
+      //alert("Log out successfully")
+    }
     return (
     <div className="nav">
       {user.user ? (
@@ -15,7 +24,7 @@ function Nav() {
           {user.user.isAdmin && (
             <NavLink to={"/statistics"}>Statistics</NavLink>
           )}
-          <button onClick={() => alert("Log out successfully")}>Logout</button>
+          <button onClick={() => {logOut()}}>Logout</button>
         </>
       ) : (
         <>

@@ -22,11 +22,9 @@ export const fetchLogin = createAsyncThunk('user/login',
                 thunkApi.rejectWithValue("Can't login, please try again")
             }
             const data = await res.json()
-            localStorage.setItem("token" ,data.token)
+            localStorage.setItem("Authorization" ,data.token)
             console.log(data);
-            
             return data
-            // thunkApi.fulfillWithValue(data)
         } catch (err) {
             thunkApi.rejectWithValue(err)
         }
@@ -54,10 +52,18 @@ export const fetchRegister = createAsyncThunk('user/register',
     }
 )
 
+
 const userSlice = createSlice({
     name: "user",
     initialState,
-    reducers: {},
+    reducers: {
+        logout:(state) => {
+            state.user = null
+        },
+        vote:(state) => {
+            state.user!.hasVoted = true
+        }
+    },
     extraReducers: (builder: ActionReducerMapBuilder<userState>) => {
       builder.addCase(fetchLogin.pending, (state, action)=>{
           state.status = DataStatus.LOADING
