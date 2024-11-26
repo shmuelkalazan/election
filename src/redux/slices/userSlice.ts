@@ -45,7 +45,8 @@ export const fetchRegister = createAsyncThunk('user/register',
                 thunkApi.rejectWithValue("Can't register, please try again")
             }
             const data = await res.json()
-            thunkApi.fulfillWithValue(data)
+            return data
+            // thunkApi.fulfillWithValue(data)
         } catch (err) {
             thunkApi.rejectWithValue(err)
         }

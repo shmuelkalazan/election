@@ -12,6 +12,7 @@ function Votes() {
   const { user} = useAppSelector((state) => state.user)
   const candidates = useAppSelector((state) => state.candidates)
   const dispach = useAppDispatch()
+
   useEffect(( )=>{
     if(!user?._id){
       navigate("/login")
@@ -23,14 +24,10 @@ function Votes() {
 
 
   const hendelVote = (candidateId:string) => {
+    dispach(userSlice.actions.vote(candidateId))
       socket.emit('newVote',{userId: user?._id.toString() ,candidateId:candidateId})
-      socket.on('returnVote',(vote:Ivote)=>{
-        console.log("someone voted")
-        console.log(vote)
-        dispach(userSlice.actions.vote(vote.candidateId))
-        dispach(candidateSlice.actions.vote(vote.candidateId))
-      })
-  }
+
+    }
 
 
   return (
