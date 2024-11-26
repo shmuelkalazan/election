@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, NavLink, useNavigate } from 'react-router-dom'
-import { RootState, useAppDispatch, useAppSelector } from '../redux/store'
+import { useDispatch } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useAppSelector } from '../redux/store'
 import userSlice from '../redux/slices/userSlice'
 
 function Nav() {

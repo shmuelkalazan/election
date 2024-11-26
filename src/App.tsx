@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Nav from './components/Nav'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './components/auth/Login'
@@ -34,8 +34,6 @@ function App() {
         <Route path='statistics' element={<Statistics/>}/>
         <Route path='/' element={<Navigate to={'/votes'}/>}/>
       </Routes>
-
-
     </div>
   )
 }

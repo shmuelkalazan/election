@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchLogin } from '../../redux/slices/userSlice'
-import cors from "cors"
+// import cors from "cors"
 import { useAppDispatch, useAppSelector } from '../../redux/store'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
     const [username ,setUsername] = useState("")
