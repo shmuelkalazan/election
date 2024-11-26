@@ -7,7 +7,7 @@ import store from './redux/store.ts'
 import { BrowserRouter } from 'react-router-dom'
 import { io } from 'socket.io-client'
 
-export const socket = io(process.env.BASE_URL)
+export const socket = io("https://server-ldfi.onrender.com")
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
