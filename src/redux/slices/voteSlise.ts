@@ -11,7 +11,7 @@ const initialState: voteState = {
 export const fetchVote = createAsyncThunk('/votes',
     async (vote : {userId: string, candidateId: string}, thunkApi) => {        
         try {
-            const res = await fetch(`${process.env.BASE_URL}/api/votes`||"http://localhost:11223/api/votes", {
+            const res = await fetch(`${process.env.BASE_URL}/api/votes`, {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json'

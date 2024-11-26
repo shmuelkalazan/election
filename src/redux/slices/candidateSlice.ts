@@ -17,7 +17,7 @@ import { Icandidate } from "../../types/candidate";
     "candidates/getList",
     async (_, thunkApi) => {
       try {
-        const res = await fetch(`${process.env.BASE_URL}/api/candidates` ||"http://localhost:11223/api/candidates" ,{
+        const res = await fetch(`${process.env.BASE_URL}/api/candidates`,{
           headers: {
             Authorization: localStorage["Authorization"]!,
           },
