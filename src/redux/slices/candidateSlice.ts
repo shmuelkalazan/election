@@ -17,16 +17,16 @@ import { Icandidate } from "../../types/candidate";
     "candidates/getList",
     async (_, thunkApi) => {
       try {
-        const res = await fetch(`https://server-ldfi.onrender.com/api/candidates`,{
-          headers: {
-            Authorization: localStorage["Authorization"]!,
-          },
-        });
-        if (res.status != 200) {
-          thunkApi.rejectWithValue("Can't get the list, please try again");
-        }
-        const data = await res.json();
-        return data
+        // const res = await fetch(`https://server-ldfi.onrender.com/api/candidates`,{
+        //   headers: {
+        //     Authorization: localStorage["Authorization"]!,
+        //   },
+        // });
+        // if (res.status != 200) {
+        //   thunkApi.rejectWithValue("Can't get the list, please try again");
+        // }
+        // const data = await res.json();
+        // return data
       } catch (err) {
         thunkApi.rejectWithValue("Can't get the list, please try again");
       }
