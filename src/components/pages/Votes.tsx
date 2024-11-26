@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
-import { Navigate, useNavigate } from 'react-router-dom'
-import candidateSlice, { fetchCandidates } from '../../redux/slices/candidateSlice'
-import { fetchVote } from '../../redux/slices/voteSlise'
+import { useNavigate } from 'react-router-dom'
+import { fetchCandidates } from '../../redux/slices/candidateSlice'
+// import { fetchVote } from '../../redux/slices/voteSlise'
 import userSlice from '../../redux/slices/userSlice'
 import { socket } from '../../main'
-import { Ivote } from '../../types/vote'
+// import { Ivote } from '../../types/vote'
 
 function Votes() {
   const navigate = useNavigate()

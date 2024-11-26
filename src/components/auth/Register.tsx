@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useAppSelector } from '../../redux/store'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Register() {
   const navigate = useNavigate()

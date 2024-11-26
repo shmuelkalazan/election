@@ -5,7 +5,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Votes from './components/pages/Votes'
 import Statistics from './components/pages/Statistics'
-import cors from "cors"
+// import cors from "cors"
 import { socket } from './main'
 import { Ivote } from './types/vote'
 import { useAppDispatch } from './redux/store'

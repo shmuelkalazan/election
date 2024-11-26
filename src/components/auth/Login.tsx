@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchLogin } from '../../redux/slices/userSlice'
 import cors from "cors"
 import { useAppDispatch, useAppSelector } from '../../redux/store'
