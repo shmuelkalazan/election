@@ -38,7 +38,7 @@ const voteSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder: ActionReducerMapBuilder<voteState>) => {
-      builder.addCase(fetchVote.pending, (state, action)=>{
+      builder.addCase(fetchVote.pending, (state)=>{
           state.status = DataStatus.LOADING
           state.error = null
           state.vote = null

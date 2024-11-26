@@ -43,7 +43,7 @@ import { Icandidate } from "../../types/candidate";
     }  
     },
     extraReducers: (builder: ActionReducerMapBuilder<candidateState>) => {
-      builder.addCase(fetchCandidates.pending, (state, action)=>{
+      builder.addCase(fetchCandidates.pending, (state)=>{
           state.status = DataStatus.LOADING
           state.error = null
           state.candidate = []

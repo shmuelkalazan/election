@@ -67,7 +67,7 @@ const userSlice = createSlice({
         }
     },
     extraReducers: (builder: ActionReducerMapBuilder<userState>) => {
-      builder.addCase(fetchLogin.pending, (state, action)=>{
+      builder.addCase(fetchLogin.pending, (state)=>{
           state.status = DataStatus.LOADING
           state.error = null
           state.user = null
